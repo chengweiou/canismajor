@@ -1,0 +1,33 @@
+services:
+  milkyway:
+    container_name: milkyway
+    ports:
+      - 60001:8906
+    volumes:
+      - ~/Desktop/docker/universe/milkyway:/proj
+    working_dir: /proj/
+    image: openjdk
+    command: java -jar ser.jar --spring.config.location=optional:classpath:/,optional:classpath:/config/,optional:file:./,optional:file:./config/
+  pgsql:
+    container_name: pgsql
+    ports:
+      - 5432:5432
+    volumes:
+      - ~/Desktop/docker/pgsql/data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=123456
+    image: postgres
+  redis:
+    container_name: redis
+    ports:
+      - 6379:6379
+    image: redis
+
+  pgadmin:
+    container_name: pgadmin
+    ports:
+      - 5433:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: chengweiou@pgadmin.com
+      PGADMIN_DEFAULT_PASSWORD: aaa
+    image: dpage/pgadmin4

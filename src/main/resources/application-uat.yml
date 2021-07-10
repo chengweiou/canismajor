@@ -1,0 +1,12 @@
+server:
+  port: 8906
+      
+spring:
+  datasource:
+    url: jdbc:postgresql://pgsql/universe?currentSchema=milkyway
+    username: postgres
+    password: 123456
+
+site:
+  andromeda: http://universe-andromeda:8906/andromeda
+
