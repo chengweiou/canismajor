@@ -1,10 +1,10 @@
 services:
-  milkyway:
-    container_name: milkyway
+  canismajor:
+    container_name: canismajor
     ports:
-      - 60001:8906
+      - 60007:8906
     volumes:
-      - ~/Desktop/docker/universe/milkyway:/proj
+      - ~/Desktop/docker/universe/canismajor:/proj
     working_dir: /proj/
     image: openjdk
     command: java -jar ser.jar --spring.config.location=optional:classpath:/,optional:classpath:/config/,optional:file:./,optional:file:./config/
@@ -22,12 +22,3 @@ services:
     ports:
       - 6379:6379
     image: redis
-
-  pgadmin:
-    container_name: pgadmin
-    ports:
-      - 5433:80
-    environment:
-      PGADMIN_DEFAULT_EMAIL: chengweiou@pgadmin.com
-      PGADMIN_DEFAULT_PASSWORD: aaa
-    image: dpage/pgadmin4

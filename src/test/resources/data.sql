@@ -1,4 +1,4 @@
-set search_path = milkyway;
+set search_path = canismajor;
 
 insert into person(name, type, phone, createAt, updateAt) values
     ('ou', 'SUPER', '', '2019-01-01T00:00:00', '2019-01-01T00:00:00'),

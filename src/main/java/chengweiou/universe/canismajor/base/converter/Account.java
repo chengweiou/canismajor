@@ -1,0 +1,27 @@
+package chengweiou.universe.canismajor.base.converter;
+
+
+import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import chengweiou.universe.blackhole.model.NotNullObj;
+import chengweiou.universe.blackhole.model.NullObj;
+import chengweiou.universe.canismajor.model.entity.person.Person;
+import lombok.Data;
+
+@Data
+public class Account implements NotNullObj, Serializable {
+    private Long id;
+    private Person person;
+    private String username;
+    @JsonIgnore
+    private String password;
+    private String extra;
+    public static final Account NULL = new Account.Null();
+    public static class Null extends Account implements NullObj {
+        @Override
+        public Person getPerson() { return Person.NULL; }
+    }
+
+}

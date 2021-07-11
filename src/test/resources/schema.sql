@@ -1,4 +1,4 @@
-set search_path = milkyway;
+set search_path = canismajor;
 
 DROP TABLE IF EXISTS person;
 CREATE TABLE person(

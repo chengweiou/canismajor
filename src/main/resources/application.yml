@@ -6,7 +6,7 @@ spring:
 
 server:
   servlet:
-    context-path: /milkyway
+    context-path: /canismajor
   error:
     whitelabel:
       enabled: false
